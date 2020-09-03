@@ -10,6 +10,8 @@ const authors_srv = require('../service/authors_srv')
 // All Authors Route
 router.get('/', async (req, res) => {
   const response = await authors_srv.getAuthors(req)
+  rep = {authors: response, head: req.header("Macska")}
+  console.log(rep)
   res.json(response)
 })
 
